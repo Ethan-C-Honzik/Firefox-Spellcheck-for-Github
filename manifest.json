@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Firefox Spellcheck for Github",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["codemirror-spellcheck.js"]
+    }
+  ]
+
+}
