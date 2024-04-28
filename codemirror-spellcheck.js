@@ -1,5 +1,11 @@
-function EnableSpellCheck() {
-	var x = document.getElementsByClassName("CodeMirror-code");
+console.log("Spellcheck loaded")
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+async function EnableSpellCheck() {
+	let x = document.getElementsByClassName("cm-content");
+	while(x == null) await sleep(1000);
 	x[0].setAttribute("spellcheck", "on"); 
 }
-setTimeout(EnableSpellCheck, 3000); //very ugly, wait for XHR so the div with CodeMirror-code class will have time to be created.
+
+EnableSpellCheck();
